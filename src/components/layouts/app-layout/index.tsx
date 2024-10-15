@@ -1,10 +1,9 @@
-import { Footer, Navbar } from '@/components/ui';
+import { Footer } from '@/components/ui';
 import { Outlet } from 'react-router-dom';
 
-export default function AppLayout() {
+export function AppLayout() {
   return (
     <>
-      <Navbar />
       <Outlet />
       <Footer />
     </>

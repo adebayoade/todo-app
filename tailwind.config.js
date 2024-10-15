@@ -50,6 +50,8 @@ export default {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
+        darkGrayishBlue: 'hsl(235, 19%, 35%)',
+        veryDarkDesaturatedBlue: 'hsl(235, 24%, 19%)',
         cream: '#fcf8f5',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

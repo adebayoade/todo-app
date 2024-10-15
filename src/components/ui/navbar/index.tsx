@@ -1,10 +1,11 @@
-import { ModeToggle } from '../mode-toggle';
+import { ModeToggle } from '../../ui';
+import { Logo } from '../logo';
 
 export function Navbar() {
   return (
-    <nav className="mt-5 py-4 shadow-sm">
-      <div className="container justify-between flex gap-5">
-        <h2 className="text-2xl font-semibold">Where in the world?</h2>
+    <nav className="py-4 shadow-sm">
+      <div className="items-center justify-between flex gap-5">
+        <Logo />
 
         <ModeToggle />
       </div>
