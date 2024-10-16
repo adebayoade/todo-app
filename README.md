@@ -6,7 +6,6 @@
 
 In the project directory, you can run:
 
-
 ```js
 - npm install
 - npm run dev

@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/core/dropdown-menu';
 
-import { Theme, useTheme } from '@/store/theme-provider';
+import { Theme, useTheme } from '@/providers/theme-provider';
 import { useColorTheme } from '@/hooks/useColorTheme';
 
 export function ModeToggle() {

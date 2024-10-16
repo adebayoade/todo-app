@@ -24,6 +24,6 @@ export const TODO: Todo[] = [
   {
     id: 5,
     title: 'Complete Todo App on Frontend Mentor',
-    status: 'pending',
+    status: 'completed',
   },
 ];
