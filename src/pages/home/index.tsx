@@ -60,7 +60,7 @@ export function Home() {
           <Navbar />
 
           <form onSubmit={handleSubmit} className="relative">
-            <CircleIcon size={31} className="absolute top-4 ml-5 text-gray-400" />
+            <CircleIcon size={31} className="absolute top-4 ml-5 text-gray-300" />
             <Input
               value={newTask ? newTask.title : ''}
               onChange={e =>
