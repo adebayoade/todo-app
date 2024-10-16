@@ -11,10 +11,10 @@ export const routes: RouteObject[] = [
         path: '/',
         element: <Home />,
       },
-      {
-        path: '*',
-        element: <NotFound />,
-      },
     ],
+  },
+  {
+    path: '*',
+    element: <NotFound />,
   },
 ];
