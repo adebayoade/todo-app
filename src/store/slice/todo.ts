@@ -2,7 +2,7 @@ import { TODO } from '@/data';
 import { Todo } from '@/types';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
-export type Filter = 'all' | 'pending' | 'completed';
+export type Filter = 'all' | 'active' | 'completed';
 
 export type TodoState = {
   value: Todo[];
@@ -52,10 +52,10 @@ const todoReducer = createSlice({
   },
 });
 
-// Selector to get pending todos
+// Selector to get active todos
 export const selectPendingTodos = createSelector(
   (state: { todos: TodoState }) => state.todos.value,
-  todos => todos.filter(todo => todo.status === 'pending').length
+  todos => todos.filter(todo => todo.status === 'active').length
 );
 
 // Selector to get filtered todos based on the current filter
@@ -63,8 +63,8 @@ export const selectFilteredTodos = createSelector(
   (state: { todos: TodoState }) => state.todos.value,
   (state: { todos: TodoState }) => state.todos.filter,
   (todos, filter) => {
-    if (filter === 'pending') {
-      return todos.filter(todo => todo.status === 'pending');
+    if (filter === 'active') {
+      return todos.filter(todo => todo.status === 'active');
     } else if (filter === 'completed') {
       return todos.filter(todo => todo.status === 'completed');
     }

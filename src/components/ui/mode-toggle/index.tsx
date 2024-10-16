@@ -1,5 +1,3 @@
-import { Moon, Sun } from 'lucide-react';
-
 import { Button } from '@/components/core/button';
 import {
   DropdownMenu,
@@ -10,6 +8,7 @@ import {
 
 import { Theme, useTheme } from '@/providers/theme-provider';
 import { useColorTheme } from '@/hooks/useColorTheme';
+import { Icon } from '@/components/icons';
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
@@ -33,13 +32,8 @@ export function ModeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          className={`${theme === 'dark' ? '#F8FAFC' : '#000000'}`}
-          variant="outline"
-          size="icon"
-        >
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Button variant="icon" size="icon">
+          {theme === 'dark' ? <Icon.Moon /> : <Icon.Sun />}
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>

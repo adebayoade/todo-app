@@ -60,20 +60,20 @@ export function Home() {
           <Navbar />
 
           <form onSubmit={handleSubmit} className="relative">
-            <CircleIcon className="absolute top-4 ml-5 text-gray-400" />
+            <CircleIcon size={31} className="absolute top-4 ml-5 text-gray-400" />
             <Input
               value={newTask ? newTask.title : ''}
               onChange={e =>
                 setNewTask({
                   id: Math.floor(Math.random() * 1000) + 1,
                   title: e.target.value,
-                  status: 'pending',
+                  status: 'active',
                 })
               }
               placeholder="Create a new todo..."
               className={`rounded-lg ${
                 theme === 'dark' ? 'bg-veryDarkDesaturatedBlue' : 'bg-white'
-              } pl-14`}
+              } pl-[85px]`}
             />
           </form>
         </div>
@@ -89,7 +89,7 @@ export function Home() {
             ))}
           </div>
 
-          <div className="p-5 flex items-center justify-between gap-5">
+          <div className="text-darkGrayishBlue p-5 flex items-center justify-between gap-5">
             <span>
               {pendingTodos || 0} {pendingTodos > 0 ? 'items' : 'item'} left
             </span>
@@ -99,13 +99,15 @@ export function Home() {
                 onClick={() => handleFilterChange('all')}
                 disabled={filter === 'all'}
                 variant={'ghost'}
+                className={`${filter === 'all' && 'text-primary'}`}
               >
                 All
               </Button>
               <Button
-                onClick={() => handleFilterChange('pending')}
-                disabled={filter === 'pending'}
+                onClick={() => handleFilterChange('active')}
+                disabled={filter === 'active'}
                 variant={'ghost'}
+                className={`${filter === 'active' && 'text-primary'}`}
               >
                 Active
               </Button>
@@ -113,6 +115,7 @@ export function Home() {
                 onClick={() => handleFilterChange('completed')}
                 disabled={filter === 'completed'}
                 variant={'ghost'}
+                className={`${filter === 'completed' && 'text-primary'}`}
               >
                 Completed
               </Button>
@@ -125,13 +128,25 @@ export function Home() {
         </div>
 
         <div className="flex lg:hidden justify-around gap-5">
-          <Button onClick={() => setFilter('all')} variant={'ghost'}>
+          <Button
+            onClick={() => handleFilterChange('all')}
+            disabled={filter === 'all'}
+            variant={'ghost'}
+          >
             All
           </Button>
-          <Button onClick={() => setFilter('pending')} variant={'ghost'}>
+          <Button
+            onClick={() => handleFilterChange('active')}
+            disabled={filter === 'active'}
+            variant={'ghost'}
+          >
             Active
           </Button>
-          <Button onClick={() => setFilter('completed')} variant={'ghost'}>
+          <Button
+            onClick={() => handleFilterChange('completed')}
+            disabled={filter === 'completed'}
+            variant={'ghost'}
+          >
             Completed
           </Button>
         </div>

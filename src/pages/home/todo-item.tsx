@@ -1,7 +1,8 @@
 import { Button } from '@/components/core';
+import { Icon } from '@/components/icons';
 import { deleteTodo, markCompleted } from '@/store/slice/todo';
 import { Todo } from '@/types';
-import { CircleCheckIcon, CircleIcon, XIcon } from 'lucide-react';
+import { CheckIcon, CircleIcon } from 'lucide-react';
 import { useDispatch } from 'react-redux';
 
 type TodoItemProp = {
@@ -29,14 +30,20 @@ export function TodoItem({ todo }: TodoItemProp) {
 
   return (
     <div className="todo-item flex justify-between gap-5 p-5 border-b">
-      <div className="flex items-center gap-5">
-        {todo.status == 'pending' ? (
-          <CircleIcon />
-        ) : todo.status == 'completed' ? (
-          <CircleCheckIcon />
-        ) : (
-          ''
-        )}
+      <div className="flex w-max items-center gap-5 overflow-hidden">
+        <div>
+          {todo.status == 'active' ? (
+            <CircleIcon className="text-gray-300" size={31} />
+          ) : todo.status == 'completed' ? (
+            // <Icon.Check />
+            <CheckIcon
+              className="bg-[linear-gradient(hsl(192,100%,67%),hsl(280,87%,65%))] rounded-full text-white"
+              size={31}
+            />
+          ) : (
+            ''
+          )}
+        </div>
 
         <Button
           variant="link"
@@ -45,9 +52,11 @@ export function TodoItem({ todo }: TodoItemProp) {
           }}
           className={`${
             todo.status === 'completed' && 'line-through text-gray-500 pointer-events-none'
-          }`}
+          } overflow-hidden`}
         >
-          {todo.title}
+          <span className="overflow-hidden text-ellipsis">{todo.title}</span>
+
+          {/* {todo.title} */}
         </Button>
       </div>
 
@@ -56,8 +65,10 @@ export function TodoItem({ todo }: TodoItemProp) {
         onClick={() => {
           handleDelete(todo.id);
         }}
+        size={'icon'}
       >
-        <XIcon />
+        {/* <XIcon /> */}
+        <Icon.Cross />
       </Button>
     </div>
   );

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -66,16 +66,13 @@
     @apply border-border;
   }
   body {
-    font-family: 'Red Hat Text', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-optical-sizing: auto;
     @apply bg-background text-foreground;
   }
   .title {
     @apply text-3xl font-bold;
   }
-  // .todo-list .todo-item:last-child {
-  //   border-bottom: none;
-  // }
   .has-line-after {
     position: relative;
     width: max-content;
@@ -94,95 +91,7 @@
   .has-line-after:hover:after {
     width: 100%;
   }
-  .pagination {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    user-select: none;
-
-    .page-item {
-      position: relative;
-      padding: 0.5rem 0.8rem;
-      // display: none;
-
-      font-size: 14px;
-      &:not(:last-child) {
-        margin-right: 8px;
-      }
-    }
-
-    @media (min-width: 650px) {
-      .page-item {
-        display: block;
-      }
-    }
-
-    .page-item.disabled {
-      @apply text-gray-400;
-      // color: #d0d5dd;
-      pointer-events: none;
-    }
-
-    .page-item .page-prev,
-    .page-item .page-next {
-      &.disabled .page-link {
-        cursor: not-allowed;
-        // pointer-events: none;
-      }
-    }
-
-    .page-link.disabled {
-      // color: #d0d5dd;
-      @apply text-gray-400;
-    }
-
-    .page-item.page-prev {
-      // position: absolute;
-      // left: 0;
-      // padding: 0;
-      // display: block;
-
-      @media (max-width: 650px) {
-        display: none;
-      }
-    }
-
-    .page-item.page-next {
-      // position: absolute;
-      // right: 0;
-      // padding: 0;
-      // display: block;
-      // @apply bg-primary rounded-md text-white;
-
-      @media (max-width: 650px) {
-        display: none;
-      }
-    }
-
-    .page-item:hover {
-      @apply text-primary;
-    }
-
-    .page-item.selected {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      width: 30px;
-      height: 30px;
-      border-radius: 20px;
-      pointer-events: none;
-      @apply bg-primary text-white;
-
-      @media (min-width: 650px) {
-        visibility: visible;
-        opacity: 1;
-      }
-      a {
-        color: #ffff;
-      }
-    }
+  .test {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   }
 }

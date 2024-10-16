@@ -9,17 +9,17 @@ export const TODO: Todo[] = [
   {
     id: 2,
     title: '10 minutes meditation',
-    status: 'pending',
+    status: 'active',
   },
   {
     id: 3,
     title: 'Read for 1 hour',
-    status: 'pending',
+    status: 'active',
   },
   {
     id: 4,
     title: 'Pick up groceries',
-    status: 'pending',
+    status: 'active',
   },
   {
     id: 5,
