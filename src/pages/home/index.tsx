@@ -56,7 +56,7 @@ export function Home() {
             : "bg-[url('/images/bg-desktop-light.jpg')]"
         } bg-cover`}
       >
-        <div className="pt-14 container flex flex-col gap-7">
+        <div className="pt-14 container max-w-[750px] flex flex-col gap-7">
           <Navbar />
 
           <form onSubmit={handleSubmit} className="relative">
@@ -79,7 +79,7 @@ export function Home() {
         </div>
       </header>
 
-      <section className="container flex flex-col gap-5 -mt-7">
+      <section className="container max-w-[750px] flex flex-col gap-5 -mt-7">
         <div
           className={`rounded-lg ${theme === 'dark' ? 'bg-veryDarkDesaturatedBlue' : 'bg-white'}`}
         >
@@ -94,7 +94,7 @@ export function Home() {
               {pendingTodos || 0} {pendingTodos > 0 ? 'items' : 'item'} left
             </span>
 
-            <div className="hidden lg:flex gap-5">
+            <div className="hidden lg:flex gap-1">
               <Button
                 onClick={() => handleFilterChange('all')}
                 disabled={filter === 'all'}
@@ -127,7 +127,11 @@ export function Home() {
           </div>
         </div>
 
-        <div className="flex lg:hidden justify-around gap-5">
+        <div
+          className={`rounded-lg p-3 flex lg:hidden justify-evenly gap-0 ${
+            theme === 'dark' ? 'bg-veryDarkDesaturatedBlue' : 'bg-white'
+          }`}
+        >
           <Button
             onClick={() => handleFilterChange('all')}
             disabled={filter === 'all'}
