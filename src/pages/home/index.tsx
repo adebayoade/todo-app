@@ -26,8 +26,9 @@ export function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
-      dispatch(addTodo(newTask));
+      dispatch(addTodo(newTask!));
     } catch (error) {
       console.log(error);
     } finally {
